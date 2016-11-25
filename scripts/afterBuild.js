@@ -22,7 +22,7 @@ module.exports = function(context) {
 
   var oldMetaRegexp = new RegExp(oldMetaPattern, 'i');
   
-  var newmeta = '<meta http-equiv="Content-Security-Policy" content="default-src gap://ready * data: blob: \'unsafe-inline\' \'unsafe-inline\' ws: wss:;">';
+  var newmeta = '<meta http-equiv="Content-Security-Policy" content="default-src gap://ready * data: blob: \'unsafe-inline\' \'unsafe-inline\' ws: wss:; media-src *;">';
 
   if (oldMetaRegexp.test(data)) {
     var newdata = data.replace(oldMetaRegexp, newmeta);
